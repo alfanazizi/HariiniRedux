@@ -1,3 +1,4 @@
+
 // actions/notesActions.js
 export const addNote = (note) => ({
     type: 'ADD_NOTE',
