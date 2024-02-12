@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { View, Text, FlatList, TextInput, Button } from "react-native";
-import { editNote, deleteNote } from "../actions/noteActions";
+import { editNote, deleteNote, deleteAll } from "../actions/noteActions";
 
 const NoteList = () => {
   const notes = useSelector((state) => state.notes);
@@ -22,6 +22,10 @@ const NoteList = () => {
   const startEditing = (index, text) => {
     setEditingIndex(index);
     setEditText(text);
+  };
+
+  const handleDeleteAllNotes = () => {
+    dispatch(deleteAll());
   };
 
   return (
@@ -67,6 +71,7 @@ const NoteList = () => {
           </View>
         )}
       />
+      <Button title="Delete All" onPress={handleDeleteAllNotes} />
     </View>
   );
 };
