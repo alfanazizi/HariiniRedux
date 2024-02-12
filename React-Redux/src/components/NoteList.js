@@ -5,13 +5,13 @@ import { View, Text, FlatList } from "react-native";
 
 const NoteList = () => {
   const notes = useSelector((state) => state.notes);
-
+   console.log('ini notes list',notes)
   return (
     <View>
       <Text>Notes:</Text>
       <FlatList
         data={notes}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item, index) => item.toString()}
         renderItem={({ item }) => <Text>{item}</Text>}
       />
     </View>

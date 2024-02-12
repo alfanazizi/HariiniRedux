@@ -1,7 +1,8 @@
 //actions/notesActions.js
 export const addNote = (note) => {
+    console.log('rifqi',note)
     return{
-        type:'AD_NOTE',
+        type:'ADD_NOTE',
         payload:note,
     };
 };
