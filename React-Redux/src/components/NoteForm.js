@@ -12,7 +12,7 @@ const NoteForm = () => {
 	console.log('tombol ditekan')
     if (noteText.trim() !== "") {
       dispatch(addNote(noteText));
-      setNoteText(" ");
+      setNoteText("");
 	  console.log('masuk if',noteText)
 	  
     }
