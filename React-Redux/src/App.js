@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       alignItems: "center",
       marginTop: 150,
+      color: "#00007B"
     },
     input: {
       width: 1250,
@@ -54,27 +55,27 @@ const styles = StyleSheet.create({
       borderRadius: 24,
       marginBottom: 10,
     },
-    button: {
-      backgroundColor: "#EB455F",
-      padding: 10,
-      margin: 10,
-      borderRadius: 24,
-      shadowColor: "black",
-      shadowOffset: { width: 0, height: 2 },
-      shadowRadius: 6,
-      shadowOpacity: 0.26,
-    },
-    buttonText: {
-      color: "white",
-      fontSize: 16,
-      fontWeight: "500",
-      paddingHorizontal: 12,
-      textAlign: "center",
-    },
-    bottonGroup: {
-      padding: 10,
-      paddingVertical: 20,
-    },
+    // // button: {
+    // //   backgroundColor: "#EB455F",
+    // //   padding: 10,
+    // //   margin: 10,
+    // //   borderRadius: 24,
+    // //   shadowColor: "black",
+    // //   shadowOffset: { width: 0, height: 2 },
+    // //   shadowRadius: 6,
+    // //   shadowOpacity: 0.26,
+    // // },
+    // buttonText: {
+    //   color: "white",
+    //   fontSize: 16,
+    //   fontWeight: "500",
+    //   paddingHorizontal: 12,
+    //   textAlign: "center",
+    // },
+    // bottonGroup: {
+    //   padding: 10,
+    //   paddingVertical: 20,
+    // },
     center: {
       width: '50%',
       alignItems: 'center',
