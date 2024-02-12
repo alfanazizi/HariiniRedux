@@ -26,7 +26,7 @@ const NoteList = () => {
 
   return (
     <View>
-      <Text>Notes:</Text>
+      <Text>List of Notes :</Text>
       <FlatList
         data={notes}
         keyExtractor={(item, index) => index.toString()}
