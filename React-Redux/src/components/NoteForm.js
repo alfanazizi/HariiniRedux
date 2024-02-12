@@ -1,7 +1,7 @@
 // components/NoteForm.js
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
-import { addNote } from '../actions/notesActions';
+import { addNote } from '../actions/noteActions';
 import { View, TextInput, Button } from 'react-native';
 
 const NoteForm = () => {
