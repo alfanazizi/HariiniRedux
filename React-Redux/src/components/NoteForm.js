@@ -21,7 +21,7 @@ const NoteForm = ({ editingNote }) => {
   return (
     <View style={{ margin: 20 }}>
       <TextInput
-        style={{ marginTop: 100 }}
+        style={styles.input}
         placeholder="Type your note here"
         value={noteText}
         onChangeText={(text) => setNoteText(text)}
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   input: {
     width: 250,
     height: 40,
-    borderColor: "#EB455F",
+    borderColor: "#EA455F",
     borderWidth: 2,
     paddingHorizontal: 10,
     borderRadius: 24,
