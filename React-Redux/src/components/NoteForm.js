@@ -9,9 +9,12 @@ const NoteForm = () => {
   const dispatch = useDispatch();
 
   const handleAddNote = () => {
+	console.log('tombol ditekan')
     if (noteText.trim() !== "") {
       dispatch(addNote(noteText));
       setNoteText(" ");
+	  console.log('masuk if',noteText)
+	  
     }
   };
 
