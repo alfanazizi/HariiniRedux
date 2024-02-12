@@ -1,7 +1,7 @@
 //actions/notesActions.js
 export const addNote = (note) => {
     return{
-        type:'AD_NOTE',
+        type:'ADD_NOTE',
         payload:note,
     };
 };
