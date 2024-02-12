@@ -31,8 +31,8 @@ const App = () => {
     return (
         <Provider store={store}>
             <View style={styles.container}>
-                <NoteForm />
-                <NoteList />
+                <NoteForm style={styles.input} />
+                <NoteList style={styles.list} />
             </View>
         </Provider>
     );
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       paddingHorizontal: 10,
       borderRadius: 24,
-      margin: 4,
+      marginBottom: 10,
     },
     button: {
       backgroundColor: "#EB455F",
@@ -74,6 +74,14 @@ const styles = StyleSheet.create({
     bottonGroup: {
       padding: 10,
       paddingVertical: 20,
+    },
+    center: {
+      width: '50%',
+      alignItems: 'center',
+    },
+    list: {
+      flex: 1,
+      width: '100%',
     },
   });
 
