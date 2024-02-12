@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      marginTop: 250,
+      marginTop: 150,
     },
     input: {
-      width: 250,
+      width: 1250,
       height: 40,
       borderColor: "#EB455F",
       borderWidth: 2,
