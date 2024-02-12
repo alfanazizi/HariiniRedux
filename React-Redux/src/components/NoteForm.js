@@ -1,21 +1,21 @@
-// components/NoteForm.js
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addNote } from "../actions/noteActions";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNote, editNote } from "../actions/noteActions";
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
 
-const NoteForm = () => {
-  const [noteText, setNoteText] = useState("");
+const NoteForm = ({ editingNote }) => {
+  const [noteText, setNoteText] = useState(editingNote ? editingNote.text : "");
   const dispatch = useDispatch();
 
-  const handleAddNote = () => {
-	console.log('tombol ditekan')
-    if (noteText.trim() !== "") {
-      dispatch(addNote(noteText));
-      setNoteText("");
-	  console.log('masuk if',noteText)
-	  
+  const handleAction = () => {
+    if (editingNote) {
+      dispatch(editNote(editingNote.index, noteText));
+    } else {
+      if (noteText.trim() !== "") {
+        dispatch(addNote(noteText));
+      }
     }
+    setNoteText("");
   };
 
   return (
@@ -26,50 +26,50 @@ const NoteForm = () => {
         value={noteText}
         onChangeText={(text) => setNoteText(text)}
       />
-      <TouchableOpacity style={styles.button} onPress={handleAddNote}>
-        <Text style={styles.buttonText}>Add Note</Text>
+      <TouchableOpacity style={styles.button} onPress={handleAction}>
+        <Text style={styles.buttonText}>{editingNote ? "Edit Note" : "Add Note"}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 220,
-    },
-    input: {
-      width: 250,
-      height: 40,
-      borderColor: "#EB455F",
-      borderWidth: 2,
-      paddingHorizontal: 10,
-      borderRadius: 24,
-      margin: 4,
-    },
-    button: {
-      backgroundColor: "#EB855F",
-      padding: 10,
-      margin: 10,
-      borderRadius: 24,
-      shadowColor: "black",
-      shadowOffset: { width: 0, height: 2 },
-      shadowRadius: 6,
-      shadowOpacity: 0.26,
-    },
-    buttonText: {
-      color: "white",
-      fontSize: 16,
-      fontWeight: "500",
-      paddingHorizontal: 12,
-      textAlign: "center",
-    },
-    bottonGroup: {
-      padding: 10,
-      paddingVertical: 20,
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 220,
+  },
+  input: {
+    width: 250,
+    height: 40,
+    borderColor: "#EB455F",
+    borderWidth: 2,
+    paddingHorizontal: 10,
+    borderRadius: 24,
+    margin: 4,
+  },
+  button: {
+    backgroundColor: "#EB855F",
+    padding: 10,
+    margin: 10,
+    borderRadius: 24,
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "500",
+    paddingHorizontal: 12,
+    textAlign: "center",
+  },
+  bottonGroup: {
+    padding: 10,
+    paddingVertical: 20,
+  },
+});
 
 export default NoteForm;
