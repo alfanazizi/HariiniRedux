@@ -15,3 +15,6 @@ export const addNote = (note) => ({
     payload: index,
   });
   
+  export const deleteAll = () => ({
+    type: 'DELETE_ALL_NOTES',
+  });
