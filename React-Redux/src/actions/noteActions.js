@@ -1,4 +1,3 @@
-
 // actions/notesActions.js
 export const addNote = (note) => ({
     type: 'ADD_NOTE',
@@ -14,4 +13,12 @@ export const addNote = (note) => ({
     type: 'DELETE_NOTE',
     payload: index,
   });
+
+  // actions/noteActions.js
+
+export const deleteAllNotes = () => ({
+    type: 'DELETE_ALL_NOTES',
+  });
+  
+  
   

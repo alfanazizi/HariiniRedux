@@ -16,6 +16,10 @@ const notesReducer = (state = initialState, action) => {
     case 'DELETE_NOTE':
       const filteredNotes = state.notes.filter((_, index) => index !== action.payload);
       return { ...state, notes: filteredNotes };
+    case 'DELETE_ALL_NOTES':
+      return {...state,
+          notes: [],
+        };
 
     default:
       return state;
